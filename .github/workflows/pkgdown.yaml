@@ -11,6 +11,9 @@ on:
 
 name: pkgdown
 
+permissions:
+  contents: write
+
 jobs:
   pkgdown:
     runs-on: ubuntu-latest
@@ -21,6 +24,8 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # JamesIves deploy 需要完整历史，浅克隆会导致 git exit 128
 
       - uses: r-lib/actions/setup-pandoc@v2
 
