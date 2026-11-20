@@ -1,6 +1,5 @@
 #import "@local/modern-cug-report:0.1.3": *
 #show: doc => template(doc, footer: "水文气象学", header: "")
-#set text(lang: "zh", font: ("Times New Roman", "Songti SC"))
 
 = 1 组件函数说明
 
